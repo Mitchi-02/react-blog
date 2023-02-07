@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    input:focus-visible, textarea:focus-visible{
+        outline:none ;
+    }
+
+    img, svg{
+      @apply max-h-full max-w-full ;
+    }
+}
+
+@layer utilities{
+  .input{
+    @apply w-full border-2 border-mainGrey p-4 rounded-xl;
+  }
+  .input:focus-visible{
+    @apply shadow-[0_0px_3px_1px] shadow-mainBlue border-white;
+  }
+  .error, .error::placeholder{
+    @apply border-mainRed shadow-mainRed text-mainRed !important ;
+  }
+  .button{
+    @apply inline-flex py-4 px-6 items-center uppercase font-medium justify-center hover:opacity-80 text-white bg-mainBlue rounded-xl ;
+  }
+}
