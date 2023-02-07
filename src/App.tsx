@@ -6,8 +6,6 @@ import { AuthProvider } from './AuthContext';
 import { GuestMiddleware, AuthMiddleware} from './middlewares';
 
 
-
-
 const pages = {
   Home : { url: "/", name:"Home", page: <Home/> },
   ResestPassword : { url: "/resetpassword", name:"ResetPassword", page: <ResetPassword/>},

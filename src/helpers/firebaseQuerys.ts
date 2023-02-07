@@ -1,4 +1,4 @@
-import { DocumentReference, addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, orderBy, query, startAfter, updateDoc, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, orderBy, query, startAfter, updateDoc, where } from "firebase/firestore";
 import { auth, db } from "../firebase";
 import { Post, Comment } from "../types";
 

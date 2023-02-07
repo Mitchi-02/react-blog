@@ -34,7 +34,7 @@ const PostOverview = (props: {post:Post}) => {
     return (  
         <div className="border-2 border-mainGrey p-4 md:p-8 max-w-3xl mx-auto">
             <div className="flex justify-between items-center gap-2 md:gap-4 font-semibold text-xl mb-10">
-                <span className="flex gap-2 md:gap-4 items-center"><img className="rounded-full w-[30px]" src={post.user.photoURL} alt=""/> {post.user.name}</span>
+                <span className="flex gap-2 md:gap-4 items-center"><img referrerPolicy="no-referrer" className="rounded-full w-[30px]" src={post.user.photoURL} alt=""/> {post.user.name}</span>
                 <span className="text-right">{createdAt}</span>
             </div>
             <h3 className="text-2xl font-bold capitalize mb-3 line-clamp-1">{post.title}</h3>

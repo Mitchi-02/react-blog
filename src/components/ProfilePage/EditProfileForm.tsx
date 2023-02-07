@@ -45,7 +45,7 @@ const EditProfileForm = (props:any) => {
                         <input multiple={false}  accept="image/*" type="file" tabIndex={-1} className="hidden" ref={fileInputRef}
                         onChange={(e) => {if(e.target.files) setImage(e.target.files[0])} }/>
                     </div>
-                    <img className="aspect-square h-[84px] rounded-full" src={ image ? URL.createObjectURL(image) : currentUser?.photoURL as string } alt="" />
+                    <img referrerPolicy="no-referrer" className="aspect-square h-[84px] rounded-full" src={ image ? URL.createObjectURL(image) : currentUser?.photoURL as string } alt="" />
                 </div>
                 <div className="px-8 py-6">  
                     <label>Full name</label>

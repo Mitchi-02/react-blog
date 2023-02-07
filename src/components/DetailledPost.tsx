@@ -48,7 +48,7 @@ const DetailledPost = (props: {post:Post}) => {
             setMessage({success:true, content:"Post deleted"});
             setTimeout(()=>redirect(pages.MyPosts.url), 3000);
         } catch (error:any) {
-            setMessage({success:false, content:error.message});
+            setMessage({success:false, content:"Something went wrong"});
             setLoading(false);
         }
     }
@@ -60,7 +60,7 @@ const DetailledPost = (props: {post:Post}) => {
             {message?.success===false && <p className="mb-4 font-bold text-center p-4 rounded-xl bg-red-100 text-mainRed">{message.content}</p>}
             <div className="border-2 border-mainGrey p-4 md:p-8">
                 <div className="flex justify-between items-center gap-2 md:gap-4 font-semibold md:text-xl mb-10">
-                    <span className="flex gap-2 md:gap-4 items-center"><img className="rounded-full w-[30px]" src={post.user.photoURL} alt=""/> {post.user.name}</span>
+                    <span className="flex gap-2 md:gap-4 items-center"><img referrerPolicy="no-referrer" className="rounded-full w-[30px]" src={post.user.photoURL} alt=""/> {post.user.name}</span>
                     <span className="text-right">{createdAt}</span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold capitalize mb-3 line-clamp-1">{post.title}</h3>

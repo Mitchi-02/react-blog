@@ -6,7 +6,7 @@ const Comment = (props: { comment:TypeComment, handleDelete:any }) => {
     const comment = props.comment;
     return ( 
         <li className="flex items-start gap-3 overflow-hidden">
-            <img src={comment.user.photoURL} alt="" className="w-[35px] rounded-full"/>
+            <img referrerPolicy="no-referrer" src={comment.user.photoURL} alt="" className="w-[35px] rounded-full"/>
             <div className="py-3 px-3 bg-gray-200 grow mt-2 rounded-xl rounded-tl-none">
                 <p className="flex justify-between gap-x-4 flex-wrap">
                     <span className="font-bold">{comment.user.name}</span>
