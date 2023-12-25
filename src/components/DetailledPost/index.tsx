@@ -68,17 +68,17 @@ export default function DetailledPost(props: { post: Post }) {
     <div className='max-w-3xl mx-auto' onClick={() => setMessage(null)}>
       {loading && <Loading />}
       {message?.success && (
-        <p className='mb-4 font-bold text-center p-4 rounded-xl bg-green-100 text-mainGreen'>
+        <p className='mb-4 page-container font-bold text-center p-4 rounded-xl bg-green-100 text-mainGreen'>
           {message.content}
         </p>
       )}
       {message?.success === false && (
-        <p className='mb-4 font-bold text-center p-4 rounded-xl bg-red-100 text-mainRed'>
+        <p className='mb-4 font-bold page-container text-center p-4 rounded-xl bg-red-100 text-mainRed'>
           {message.content}
         </p>
       )}
-      <div className='border-2 border-mainGrey p-4 md:p-8'>
-        <div className='flex justify-between items-center gap-2 md:gap-4 font-semibold md:text-xl mb-10'>
+      <div className='border-b-2 sm:border-2 border-mainGrey p-4 md:p-8 sm:rounded-t-lg'>
+        <div className='flex justify-between items-center gap-2 md:gap-4 font-semibold text-sm sm:text-base md:text-xl mb-10'>
           <span className='flex gap-2 md:gap-4 items-center'>
             <img
               referrerPolicy='no-referrer'
@@ -86,20 +86,24 @@ export default function DetailledPost(props: { post: Post }) {
               src={post.user.photoURL}
               alt=''
             />{' '}
-            {post.user.name}
+            <span className='truncate'>{post.user.name}</span>
           </span>
           <span className='text-right'>{createdAt}</span>
         </div>
-        <h3 className='text-xl md:text-2xl font-bold capitalize mb-3 line-clamp-1'>
+        <h3 className='text-xl md:text-2xl font-bold capitalize mb-3 line-clamp-2 !text-ellipsis'>
           {post.title}
         </h3>
-        <p className='capitalize mb-10 line-clamp-5'>{post.description}.</p>
-        <div className='flex gap-2 sm:gap-4 items-center'>
-          <span className='py-4 px-6 text-white bg-blue-400 rounded-full'>
+        <p className='capitalize mb-10 max-sm:text-sm'>{post.description}.</p>
+        <div className='flex gap-2 sm:gap-4'>
+          <span className='max-sm:text-sm py-4 px-6 text-white bg-blue-400 rounded-full'>
             {totalLikes}
           </span>
           {!liked && (
-            <button onClick={handleLike} disabled={loading2} className='button'>
+            <button
+              onClick={handleLike}
+              disabled={loading2}
+              className='button max-sm:text-sm !py-2 !px-4'
+            >
               like
             </button>
           )}
@@ -107,13 +111,16 @@ export default function DetailledPost(props: { post: Post }) {
             <button
               onClick={handleUnlike}
               disabled={loading2}
-              className='button'
+              className='button max-sm:text-sm !py-2 !px-4'
             >
               unlike
             </button>
           )}
           {currentUser?.uid === post.user.id && (
-            <button onClick={handleDelete} className='button grow'>
+            <button
+              onClick={handleDelete}
+              className='button grow max-sm:text-sm !py-2 !px-4'
+            >
               delete post
             </button>
           )}

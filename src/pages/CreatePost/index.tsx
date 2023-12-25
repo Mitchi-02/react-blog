@@ -42,14 +42,14 @@ export default function CreatePost () {
 
   return (
     <div
-      className='p-6'
+      className='py-6 sm:page-container'
       onClick={() => {
         setError('')
         setSuccess('')
       }}
     >
       {loading && <Loading />}
-      <div className='space-y-8 px-8 py-6 border-2 border-mainGrey max-w-[700px] mx-auto rounded-xl'>
+      <div className='space-y-8 p-6 sm:border-2 border-mainGrey max-w-[700px] mx-auto sm:rounded-xl'>
         <h1 className='text-center font-bold sm:text-4xl text-3xl text-mainBlue'>
           Create Post
         </h1>
@@ -75,8 +75,7 @@ export default function CreatePost () {
           </div>
           <div className='mt-3'>
             <label>Description</label>
-            <input
-              type='text'
+            <textarea
               placeholder='Post description ...'
               className='mt-1 input'
               onChange={(e) => (descriptionRef.current = e.target.value)}

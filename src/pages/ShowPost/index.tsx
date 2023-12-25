@@ -20,11 +20,11 @@ export default function ShowPost () {
   }, [])
 
   return (
-    <div className='py-6 sm:px-6'>
+    <div className='py-6 sm:page-container'>
       {loading ? (
         <Loading />
       ) : !post ? (
-        <p className='mb-4 font-bold text-center p-4 rounded-xl bg-red-100 text-mainRed'>
+        <p className='mb-4 max-sm:page-container font-bold text-center p-4 rounded-xl bg-red-100 text-mainRed'>
           No post found
         </p>
       ) : (

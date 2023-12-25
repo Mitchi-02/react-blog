@@ -21,7 +21,7 @@ export default function Profile() {
 
   return (
     <div
-      className='py-6 px-6'
+      className='py-6 sm:page-container'
       onClick={() => {
         setError('')
         setSuccess('')

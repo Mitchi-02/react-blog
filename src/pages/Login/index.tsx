@@ -40,9 +40,9 @@ export default function Login () {
   }
 
   return (
-    <div className='py-6 px-6'>
+    <div className='py-6 sm:page-container'>
       {loading && <Loading />}
-      <div className='space-y-6 py-6 px-4 sm:px-6 max-w-[700px] mx-auto border-mainGrey border-2 rounded-xl'>
+      <div className='space-y-6 py-6 px-4 sm:px-6 max-w-[700px] mx-auto border-mainGrey sm:border-2 sm:rounded-xl'>
         <h1 className='text-center font-bold sm:text-4xl text-3xl text-mainBlue'>
           Sign In
         </h1>
@@ -72,9 +72,9 @@ export default function Login () {
               />
             </div>
           </div>
-          <button className='button w-full'>Sign In</button>
+          <button className='button w-full max-sm:text-sm'>Sign In</button>
         </form>
-        <button onClick={handleGoogleSignIn} className='button w-full'>
+        <button onClick={handleGoogleSignIn} className='button w-full max-sm:text-sm'>
           Sign in with google
         </button>
         <div className='justify-center flex flex-wrap'>

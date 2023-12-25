@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -9,7 +9,6 @@ import Profile from './pages/Profile'
 import MyPosts from './pages/MyPosts'
 import CreatePost from './pages/CreatePost'
 import ShowPost from './pages/ShowPost'
-import NotFound from './pages/NotFound'
 
 import Header from './components/Header'
 import { AuthProvider } from './AuthContext'
@@ -33,7 +32,7 @@ export const pages = {
     page: <CreatePost />,
   },
   ShowPost: { url: '/posts/', name: 'Show post', page: <ShowPost /> },
-  NotFound: { url: '*', name: 'Not found', page: <NotFound /> },
+  NotFound: { url: '*', name: 'Not found', page: <Navigate to='/' /> },
 }
 
 export default function App() {

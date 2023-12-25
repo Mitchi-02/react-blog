@@ -36,7 +36,7 @@ export default function EditProfileForm(props: Props) {
     }
   }
   return (
-    <div className='border-mainGrey border-2 rounded-xl'>
+    <div className='border-mainGrey border-y-2 sm:border-2 sm:rounded-xl'>
       <div className='px-8 py-6'>
         <h1 className='text-mainBlue text-xl font-bold'>Edit Profile</h1>
       </div>
@@ -46,7 +46,7 @@ export default function EditProfileForm(props: Props) {
             <h2 className='font-semibold text-lg'>Profile Picture</h2>
             <button
               type='button'
-              className='button'
+              className='button max-sm:text-xs max-sm:py-3 max-sm:px-4'
               onClick={() => fileInputRef.current.click()}
             >
               upload picture

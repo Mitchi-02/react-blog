@@ -26,4 +26,15 @@
   .button{
     @apply inline-flex py-4 px-6 items-center uppercase font-medium justify-center hover:opacity-80 text-white bg-mainBlue rounded-xl ;
   }
+  .page-container {
+    --max-width: 90rem;
+    width: min(var(--max-width), 100% - var(--side-padding, 1rem) * 2);
+    margin-inline: auto;
+  }
+
+  @media (min-width: theme('screens.sm')) {
+    .page-container {
+      --side-padding: 2rem;
+    }
+  }
 }

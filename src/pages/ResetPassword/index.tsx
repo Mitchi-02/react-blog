@@ -27,9 +27,9 @@ export default function ResetPassword() {
   }
 
   return (
-    <div className='py-6 px-6'>
+    <div className='py-6 sm:page-container'>
       {loading && <Loading />}
-      <div className='space-y-6 py-6 px-4 sm:px-6 max-w-[700px] mx-auto border-mainGrey border-2 rounded-xl'>
+      <div className='space-y-6 py-6 px-4 sm:px-6 max-w-[700px] mx-auto border-mainGrey sm:border-2 sm:rounded-xl'>
         <h1 className='text-center font-bold sm:text-4xl text-3xl text-mainBlue'>
           Reset Password
         </h1>
@@ -58,7 +58,7 @@ export default function ResetPassword() {
               setSuccess('')
             }}
           />
-          <button className='button w-full mt-4'>Send reset email</button>
+          <button className='button w-full mt-4 max-sm:text-sm'>Send reset email</button>
         </form>
       </div>
     </div>

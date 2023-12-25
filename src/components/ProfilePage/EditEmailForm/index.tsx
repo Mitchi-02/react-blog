@@ -38,7 +38,7 @@ export default function EditEmailForm (props: Props) {
   }
 
   return (
-    <div className='border-mainGrey border-2 rounded-xl'>
+    <div className='border-mainGrey border-y-2 sm:border-2 sm:rounded-xl'>
       <div className='px-8 py-6'>
         <h1 className='text-mainBlue text-xl font-bold'>Edit Email</h1>
       </div>

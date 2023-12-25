@@ -43,17 +43,17 @@ export default function MyPosts () {
     initialFetch()
   }, [filter])
   return (
-    <div className='py-6 sm:px-6'>
+    <div className='py-6'>
       {loading && <Loading />}
-      <div className='flex gap-8 items-center mb-10 justify-center'>
-        <span className='text-2xl'>Order By</span>
+      <div className='flex sm:gap-8 items-center mb-10 justify-center page-container'>
+        <span className='text-base sm:text-2xl pr-4'>Order By</span>
         {filters.map((filt) => (
           <button
             key={filt.value}
             disabled={loading}
             onClick={changeFilter}
             value={filt.value}
-            className={`font-bold py-4 px-6 rounded-3xl 
+            className={`font-bold py-2 px-4 sm:py-4 sm:px-6 rounded-3xl max-sm:font-sm 
                     ${
                       filter == filt.value
                         ? 'bg-mainBlue text-white cursor-auto'
@@ -65,17 +65,17 @@ export default function MyPosts () {
         ))}
       </div>
       {error ? (
-        <p className='mb-4 font-bold text-center p-4 rounded-xl bg-red-100 text-mainRed'>
+        <p className='mb-4 font-bold page-container text-center p-4 rounded-xl bg-red-100 text-mainRed'>
           {error}
         </p>
       ) : (
         <>
           {!loading && !posts.length && (
-            <p className='mb-4 font-bold text-center p-4 rounded-xl bg-blue-100 text-mainBlue'>
+            <p className='mb-4 font-bold page-container max-sm:text-sm text-center p-4 rounded-xl bg-blue-100 text-mainBlue'>
               You have no posts
             </p>
           )}
-          <ul className='flex flex-col gap-8'>
+          <ul className='flex flex-col gap-8 sm:page-container'>
             {posts.map((post: Post) => (
               <li key={post.id}>
                 <PostOverview post={post} />
@@ -84,7 +84,7 @@ export default function MyPosts () {
             {!loading && posts.length != 0 && (
               <button
                 disabled={loading}
-                className='button'
+                className='button page-container'
                 onClick={fetchMorePosts}
               >
                 {loading2 ? 'Loading...' : 'Show more Posts'}

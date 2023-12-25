@@ -45,17 +45,17 @@ export default function Home () {
   }, [filter])
 
   return (
-    <div className='py-6 sm:px-6'>
+    <section className='py-6'>
       {loading && <Loading />}
-      <div className='flex gap-8 items-center mb-10 justify-center'>
-        <span className='text-2xl'>Order By</span>
+      <div className='flex sm:gap-8 items-center mb-10 justify-center page-container'>
+        <span className='text-base sm:text-2xl pr-4'>Order By</span>
         {filters.map((filt) => (
           <button
             key={filt.value}
             disabled={loading}
             onClick={changeFilter}
             value={filt.value}
-            className={`font-bold py-4 px-6 rounded-3xl 
+            className={`font-bold py-2 px-4 sm:py-4 sm:px-6 rounded-3xl max-sm:font-sm 
                     ${
                       filter == filt.value
                         ? 'bg-mainBlue text-white cursor-auto'
@@ -67,12 +67,12 @@ export default function Home () {
         ))}
       </div>
       {error ? (
-        <p className='mb-4 font-bold text-center p-4 rounded-xl bg-red-100 text-mainRed'>
+        <p className='mb-4 font-bold page-container text-center p-4 rounded-xl bg-red-100 text-mainRed'>
           {error}
         </p>
       ) : (
         <>
-          <ul className='flex flex-col gap-8'>
+          <ul className='flex flex-col gap-8 sm:page-container'>
             {posts.map((post: Post) => (
               <li key={post.id}>
                 <PostOverview post={post} />
@@ -81,7 +81,7 @@ export default function Home () {
             {!loading && (
               <button
                 disabled={loading}
-                className='button'
+                className='button page-container'
                 onClick={fetchMorePosts}
               >
                 {loading2 ? 'Loading...' : 'Show more Posts'}
@@ -90,6 +90,6 @@ export default function Home () {
           </ul>
         </>
       )}
-    </div>
+    </section>
   )
 }

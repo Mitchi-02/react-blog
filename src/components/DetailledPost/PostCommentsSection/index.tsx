@@ -66,16 +66,19 @@ export default function PostCommentsSection (props: { postId: string }) {
   }, [])
 
   return (
-    <div className='border-2 border-t-0 border-mainGrey p-4 md:p-8'>
+    <div className='sm:border-b-2 sm:border-x-2 border-mainGrey p-4 md:p-8'>
       {loading2 && <Loading />}
       <form className='flex gap-4 mb-6' onSubmit={handleSubmit}>
         <input
           type='text'
-          className='input'
+          className='input max-sm:!text-sm'
           placeholder='Comment...'
           onChange={(e) => (commentRef.current = e.target.value)}
         />
-        <button disabled={loading2 || loading} className='button'>
+        <button
+          disabled={loading2 || loading}
+          className='button max-sm:text-sm max-sm:!py-2 max-sm:!px-4'
+        >
           Submit
         </button>
       </form>
@@ -88,13 +91,13 @@ export default function PostCommentsSection (props: { postId: string }) {
           />
         ))}
         {!loading && comments.length == 0 ? (
-          <p className='mb-4 font-bold text-center p-4 rounded-xl bg-blue-100 text-mainBlue'>
+          <p className='mb-4 font-bold max-sm:text-sm text-center p-4 rounded-xl bg-blue-100 text-mainBlue'>
             No comments
           </p>
         ) : (
           <button
             disabled={loading}
-            className='button'
+            className='button max-sm:text-sm max-sm:!px-4'
             onClick={fetchMoreComments}
           >
             {loading ? 'Loading comments' : 'Show more Comments'}
