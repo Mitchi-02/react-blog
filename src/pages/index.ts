@@ -1,9 +1,0 @@
-export { default as CreatePost } from './CreatePost';
-export { default as Home } from './Home';
-export { default as Login } from './Login';
-export { default as MyPosts } from './MyPosts';
-export { default as NotFound } from './NotFound';
-export { default as Profile } from './Profile';
-export { default as Register } from './Register';
-export { default as ResetPassword } from './ResetPassword';
-export { default as ShowPost } from './ShowPost';
