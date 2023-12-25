@@ -53,7 +53,7 @@ export default function PostOverview(props: { post: Post }) {
             alt=''
           />{' '}
           <span className='truncate'>
-            ilyas ilyas ilyas ilyas ilyas ilyas ilyas ilyas
+            {post.user.name}
           </span>
         </span>
         <span className='text-right ml-auto'>{createdAt}</span>
